@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="id" data-brand="inagov" data-theme="light">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Layanan Aduan Warga · Kelurahan Sukamaju</title>
+<meta name="description" content="Sampaikan aduan layanan publik di Kelurahan Sukamaju dan pantau tindak lanjutnya.">
+<link rel="stylesheet" href="idds/fonts/inter.css">
+<link rel="stylesheet" href="idds/idds.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<a class="skip" href="#konten">Lewati ke konten</a>
+
+<header class="topbar">
+  <div class="wrap topbar__in">
+    <a class="logo" href="#beranda" aria-label="Layanan Aduan Warga, ke beranda">
+      <span class="logo__mark" aria-hidden="true">{{icon:building-community}}</span>
+      <span><b>Aduan Warga</b><small>Kelurahan Sukamaju</small></span>
+    </a>
+    <nav aria-label="Navigasi utama" class="nav">
+      <a href="#beranda" data-nav="beranda">Beranda</a>
+      <a href="#buat" data-nav="buat">Buat aduan</a>
+      <a href="#status" data-nav="status">Cek status</a>
+    </nav>
+  </div>
+</header>
+
+<main id="konten" tabindex="-1">
+
+<!-- ============ BERANDA ============ -->
+<section data-view="beranda" aria-labelledby="judul-beranda">
+  <div class="hero">
+    <div class="wrap hero__in">
+      <div class="hero__text">
+        <span class="ina-badge ina-badge--soft ina-badge--brand ina-badge--md ina-badge--rounded-full">Layanan resmi kelurahan</span>
+        <h1 id="judul-beranda">Sampaikan aduan, kami tindak lanjuti</h1>
+        <p>Laporkan masalah layanan publik di lingkungan Anda, misalnya jalan rusak, sampah, atau penerangan jalan. Setiap aduan mendapat nomor tiket untuk dipantau.</p>
+        <div class="actions">
+          <a class="ina-button ina-button--primary ina-button--lg" href="#buat">{{icon:message-report}} Buat aduan</a>
+          <a class="ina-button ina-button--secondary ina-button--lg" href="#status">{{icon:search}} Cek status aduan</a>
+        </div>
+      </div>
+      <dl class="hero__stats" aria-label="Ringkasan layanan bulan ini">
+        <div class="ina-card stat"><dt>Aduan masuk bulan ini</dt><dd id="st-total">0</dd></div>
+        <div class="ina-card stat"><dt>Selesai ditindaklanjuti</dt><dd id="st-selesai">0</dd></div>
+        <div class="ina-card stat"><dt>Rata-rata waktu tanggapan</dt><dd>2 hari kerja</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="ina-alert ina-alert--info" role="status">
+      <div class="ina-alert__icon">{{icon:clock-hour-4}}</div>
+      <div class="ina-alert__content"><div class="ina-alert__text-section">
+        <div class="ina-alert__title">Jam layanan petugas</div>
+        <div class="ina-alert__description">Aduan dapat dikirim kapan saja. Petugas memeriksa aduan pada Senin–Jumat, 08.00–15.00 WIB.</div>
+      </div></div>
+    </div>
+
+    <h2 class="sec">Cara menyampaikan aduan</h2>
+    <ol class="steps">
+      <li class="ina-card step"><span class="step__ic" aria-hidden="true">{{icon:file-text}}</span><h3>1. Isi formulir</h3><p>Tulis identitas, lokasi, dan uraian masalah dengan jelas.</p></li>
+      <li class="ina-card step"><span class="step__ic" aria-hidden="true">{{icon:shield-check}}</span><h3>2. Simpan nomor tiket</h3><p>Nomor tiket muncul setelah aduan terkirim. Simpan untuk memantau.</p></li>
+      <li class="ina-card step"><span class="step__ic" aria-hidden="true">{{icon:search}}</span><h3>3. Pantau tindak lanjut</h3><p>Cek status kapan saja: diterima, diverifikasi, diproses, atau selesai.</p></li>
+    </ol>
+
+    <h2 class="sec">Pertanyaan yang sering diajukan</h2>
+    <div class="faq">
+      <div class="ina-accordion">
+        <button type="button" class="ina-accordion__toggle" aria-expanded="false" aria-controls="faq-1" id="faq-h1">
+          <div class="ina-accordion__title">Apakah data pribadi saya aman?</div>
+          <div class="ina-accordion__toggler">{{chev}}</div>
+        </button>
+        <div id="faq-1" class="ina-accordion__content" aria-labelledby="faq-h1"><div class="ina-accordion__body">
+          <p>Ya. NIK dan nomor telepon hanya dipakai petugas untuk verifikasi dan menghubungi Anda. Data tidak ditampilkan kepada publik.</p>
+        </div></div>
+      </div>
+      <div class="ina-accordion">
+        <button type="button" class="ina-accordion__toggle" aria-expanded="false" aria-controls="faq-2" id="faq-h2">
+          <div class="ina-accordion__title">Berapa lama aduan ditanggapi?</div>
+          <div class="ina-accordion__toggler">{{chev}}</div>
+        </button>
+        <div id="faq-2" class="ina-accordion__content" aria-labelledby="faq-h2"><div class="ina-accordion__body">
+          <p>Aduan diverifikasi paling lambat 2 hari kerja. Waktu penyelesaian bergantung pada jenis masalah dan instansi yang menangani.</p>
+        </div></div>
+      </div>
+      <div class="ina-accordion">
+        <button type="button" class="ina-accordion__toggle" aria-expanded="false" aria-controls="faq-3" id="faq-h3">
+          <div class="ina-accordion__title">Saya lupa nomor tiket. Apa yang harus dilakukan?</div>
+          <div class="ina-accordion__toggler">{{chev}}</div>
+        </button>
+        <div id="faq-3" class="ina-accordion__content" aria-labelledby="faq-h3"><div class="ina-accordion__body">
+          <p>Datang ke kantor kelurahan dengan membawa KTP, atau hubungi layanan pengaduan di (0271) 000-000 pada jam kerja.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUAT ADUAN ============ -->
+<section data-view="buat" hidden aria-labelledby="judul-buat">
+  <div class="wrap narrow">
+    <nav class="ina-breadcrumb" aria-label="Breadcrumb"><ol class="ina-breadcrumb__list">
+      <li class="ina-breadcrumb__item"><a href="#beranda" class="ina-breadcrumb__link"><span class="ina-breadcrumb__text">Beranda</span></a><span class="ina-breadcrumb__separator" aria-hidden="true">{{chevr}}</span></li>
+      <li class="ina-breadcrumb__item"><span class="ina-breadcrumb__link ina-breadcrumb__link--active" aria-current="page"><span class="ina-breadcrumb__text">Buat aduan</span></span></li>
+    </ol></nav>
+    <h1 id="judul-buat" class="ptitle">Buat Aduan</h1>
+    <p class="plead">Lengkapi kolom bertanda <span aria-hidden="true">*</span><span class="sr">bintang</span> sesuai keadaan sebenarnya.</p>
+
+    <div id="form-error" class="ina-alert ina-alert--critical" role="alert" hidden tabindex="-1">
+      <div class="ina-alert__content"><div class="ina-alert__text-section">
+        <div class="ina-alert__title">Aduan belum bisa dikirim</div>
+        <div class="ina-alert__description">Periksa kembali kolom yang ditandai merah di bawah.</div>
+      </div></div>
+    </div>
+
+    <form id="form-aduan" class="ina-card formcard" novalidate>
+      <fieldset class="group"><legend>Identitas pelapor</legend>
+        {{field:nama|Nama lengkap|text|Sesuai KTP|name|required}}
+        {{field:nik|NIK|text|16 digit angka|off|required|numeric|16}}
+        {{field:telp|Nomor ponsel|tel|Contoh: 081234567890|tel|required|tel|15}}
+      </fieldset>
+
+      <fieldset class="group"><legend>Detail aduan</legend>
+        <fieldset class="ina-radio-input ina-radio-input--size-md ina-radio-input--orientation-vertical" id="kategori" aria-describedby="kategori-msg">
+          <div class="ina-radio-input__group">
+            <p class="ina-radio-input__main-label">Kategori<span aria-hidden="true"> *</span></p>
+            {{radio:jalan|Jalan dan saluran air}}
+            {{radio:sampah|Kebersihan dan sampah}}
+            {{radio:pju|Penerangan jalan umum}}
+            {{radio:adminduk|Administrasi kependudukan}}
+            {{radio:lain|Lainnya}}
+          </div>
+          <div class="ina-text-field__bottom-area"><div id="kategori-msg" class="ina-text-field__helper-text" hidden></div></div>
+        </fieldset>
+        {{field:lokasi|Lokasi kejadian|text|Contoh: Jl. Melati RT 03/RW 05, depan masjid|street-address|required}}
+        <div class="ina-text-area" data-f="uraian">
+          <label class="ina-text-area__label" for="uraian">Uraian masalah<span aria-hidden="true"> *</span></label>
+          <div class="ina-text-area__wrapper ina-text-area__wrapper--status-neutral">
+            <textarea id="uraian" name="uraian" class="ina-text-area__input" rows="5" maxlength="500" required aria-describedby="uraian-msg uraian-count" placeholder="Jelaskan apa yang terjadi, sejak kapan, dan dampaknya."></textarea>
+          </div>
+          <div class="ina-text-field__bottom-area row-between">
+            <div id="uraian-msg" class="ina-text-field__helper-text">Minimal 20 karakter.</div>
+            <div id="uraian-count" class="ina-text-area__char-count" aria-live="polite">0/500</div>
+          </div>
+        </div>
+      </fieldset>
+
+      <label class="ina-checkbox" id="setuju-wrap">
+        <input type="checkbox" id="setuju" name="setuju" class="ina-checkbox__input peer" aria-describedby="setuju-msg">
+        <div class="ina-checkbox__box ina-checkbox__box--unchecked"></div>
+        <div class="ina-checkbox__content"><span class="ina-checkbox__label">Saya menyatakan data yang saya isi benar dan dapat dipertanggungjawabkan.</span></div>
+      </label>
+      <div id="setuju-msg" class="ina-text-field__helper-text ina-text-field__helper-text--error" hidden>Centang pernyataan ini untuk melanjutkan.</div>
+
+      <div class="formactions">
+        <a class="ina-button ina-button--secondary ina-button--md" href="#beranda">Batal</a>
+        <button class="ina-button ina-button--primary ina-button--md" type="submit">Kirim aduan</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ BERHASIL ============ -->
+<section data-view="berhasil" hidden aria-labelledby="judul-berhasil">
+  <div class="wrap narrow">
+    <div class="ina-card done">
+      <span class="done__ic" aria-hidden="true">{{icon:check}}</span>
+      <h1 id="judul-berhasil" class="ptitle">Aduan Anda sudah diterima</h1>
+      <p>Simpan nomor tiket berikut untuk memantau tindak lanjut.</p>
+      <p class="ticket" id="tiket-baru" aria-live="polite">—</p>
+      <div class="actions center">
+        <a class="ina-button ina-button--primary ina-button--md" id="lihat-status" href="#status">Lihat status aduan</a>
+        <a class="ina-button ina-button--secondary ina-button--md" href="#beranda">Kembali ke beranda</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CEK STATUS ============ -->
+<section data-view="status" hidden aria-labelledby="judul-status">
+  <div class="wrap">
+    <nav class="ina-breadcrumb" aria-label="Breadcrumb"><ol class="ina-breadcrumb__list">
+      <li class="ina-breadcrumb__item"><a href="#beranda" class="ina-breadcrumb__link"><span class="ina-breadcrumb__text">Beranda</span></a><span class="ina-breadcrumb__separator" aria-hidden="true">{{chevr}}</span></li>
+      <li class="ina-breadcrumb__item"><span class="ina-breadcrumb__link ina-breadcrumb__link--active" aria-current="page"><span class="ina-breadcrumb__text">Cek status</span></span></li>
+    </ol></nav>
+    <h1 id="judul-status" class="ptitle">Cek Status Aduan</h1>
+    <p class="plead">Masukkan nomor tiket yang Anda terima setelah mengirim aduan. Contoh: <a href="#status?t=ADU-20261028-0001" id="contoh-tiket">ADU-20261028-0001</a></p>
+
+    <form id="form-cek" class="cek" role="search" novalidate>
+      <div class="ina-text-field" data-f="tiket">
+        <label class="ina-text-field__label" for="tiket">Nomor tiket</label>
+        <div class="ina-text-field__wrapper ina-text-field__wrapper--size-md">
+          <div class="ina-text-field__prefix-icon">{{icon16:search}}</div>
+          <input id="tiket" name="tiket" class="ina-text-field__input" placeholder="ADU-YYYYMMDD-NNNN" autocomplete="off" aria-describedby="tiket-msg">
+        </div>
+        <div class="ina-text-field__bottom-area"><div id="tiket-msg" class="ina-text-field__helper-text" hidden></div></div>
+      </div>
+      <button class="ina-button ina-button--primary ina-button--md" type="submit">Cek status</button>
+    </form>
+
+    <div id="hasil" hidden>
+      <div class="ina-card detail">
+        <div class="detail__head">
+          <div><p class="muted small">Nomor tiket</p><p class="ticket sm" id="d-tiket"></p></div>
+          <span id="d-badge"></span>
+        </div>
+        <div id="d-stepper" class="stepwrap"></div>
+        <dl class="kv">
+          <div><dt>Kategori</dt><dd id="d-kat"></dd></div>
+          <div><dt>Lokasi</dt><dd id="d-lok"></dd></div>
+          <div><dt>Dikirim</dt><dd id="d-tgl"></dd></div>
+          <div class="full"><dt>Uraian</dt><dd id="d-ura"></dd></div>
+        </dl>
+      </div>
+      <h2 class="sec">Riwayat tindak lanjut</h2>
+      <div class="ina-table" data-initialized="true">
+        <table class="ina-table__container">
+          <caption class="sr">Riwayat tindak lanjut aduan</caption>
+          <thead class="ina-table__header"><tr><th class="ina-table__header-cell" scope="col">Waktu</th><th class="ina-table__header-cell" scope="col">Status</th><th class="ina-table__header-cell" scope="col">Keterangan</th><th class="ina-table__header-cell" scope="col">Petugas</th></tr></thead>
+          <tbody class="ina-table__body" id="d-riwayat"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <div><b>Kantor Kelurahan Sukamaju</b><p>{{icon16:map-pin}} Jl. Merdeka No. 10, Kota Contoh</p></div>
+    <div><p>{{icon16:phone}} (0271) 000-000</p><p>{{icon16:mail}} aduan@sukamaju.contoh.go.id</p></div>
+    <p class="muted small">Situs contoh untuk demonstrasi. Data tersimpan di peramban Anda saja.</p>
+  </div>
+</footer>
+
+<script src="idds/idds.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

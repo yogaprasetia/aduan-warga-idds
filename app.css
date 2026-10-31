@@ -1,0 +1,88 @@
+/* Tata letak halaman. Komponen memakai kelas resmi ina-* dari @idds/styles;
+   di sini hanya kerangka (header, grid, kartu langkah) dengan token --ina-* dan spacing IDDS (4/8/12/16/24/32/40/48/64). */
+*{box-sizing:border-box}
+body{margin:0;font-family:"Inter",system-ui,sans-serif;font-size:16px;line-height:24px;color:var(--ina-content-primary);background:var(--ina-background-secondary);-webkit-font-smoothing:antialiased}
+h1,h2,h3,p{margin:0}
+a{color:var(--ina-primary-primary)}
+.ic{flex:none;vertical-align:-4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.muted{color:var(--ina-content-secondary)}.small{font-size:14px;line-height:20px}
+:focus-visible{outline:2px solid var(--ina-guide-500,#0968f6);outline-offset:2px}
+.skip{position:absolute;left:16px;top:-64px;z-index:100;padding:8px 16px;border-radius:var(--ina-radius-lg);background:var(--ina-primary-primary);color:#fff;font-weight:600;text-decoration:none}.skip:focus{top:16px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}.wrap.narrow{max-width:640px}
+main{display:block;min-height:70vh;padding-bottom:64px}main:focus{outline:none}
+/* header */
+.topbar{background:var(--ina-background-primary);border-bottom:1px solid var(--ina-stroke-primary);position:sticky;top:0;z-index:20}
+.topbar__in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.logo{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--ina-content-primary)}
+.logo__mark{display:grid;place-items:center;width:40px;height:40px;border-radius:var(--ina-radius-lg);background:var(--ina-primary-primary);color:#fff}
+.logo b{display:block;font-size:16px;line-height:24px}.logo small{display:block;font-size:12px;line-height:16px;color:var(--ina-content-secondary)}
+.nav{display:flex;gap:4px}
+.nav a{padding:8px 12px;border-radius:var(--ina-radius-lg);color:var(--ina-content-secondary);text-decoration:none;font-size:14px;line-height:20px;font-weight:500}
+.nav a:hover{background:var(--ina-background-secondary);color:var(--ina-content-primary)}
+.nav a[aria-current=page]{background:var(--ina-primary-50);color:var(--ina-primary-primary)}
+/* hero */
+.hero{background:var(--ina-background-primary);border-bottom:1px solid var(--ina-stroke-primary);margin-bottom:32px}
+.hero__in{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;padding:64px 24px}
+.hero h1{font-size:40px;line-height:48px;font-weight:700;margin:16px 0}
+.hero p{font-size:18px;line-height:26px;color:var(--ina-content-secondary);max-width:60ch}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.actions.center{justify-content:center;margin-top:24px}
+.actions .ina-button{text-decoration:none}
+.hero__stats{display:grid;gap:16px;margin:0}
+.stat{padding:16px 24px;align-items:flex-start}.stat dt{font-size:14px;line-height:20px;color:var(--ina-content-secondary)}.stat dd{margin:4px 0 0;font-size:28px;line-height:36px;font-weight:600;font-variant-numeric:tabular-nums}
+/* seksi */
+.sec{font-size:24px;line-height:32px;font-weight:600;margin:48px 0 16px}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step{padding:24px;gap:8px}.step h3{font-size:18px;line-height:26px;font-weight:600}.step p{font-size:14px;line-height:20px;color:var(--ina-content-secondary)}
+.step__ic{display:grid;place-items:center;width:40px;height:40px;border-radius:var(--ina-radius-lg);background:var(--ina-primary-50);color:var(--ina-primary-primary);margin-bottom:8px}
+.faq{display:grid;gap:8px;max-width:800px}
+.faq .ina-accordion{background:var(--ina-background-primary);border:1px solid var(--ina-stroke-primary);border-radius:var(--ina-radius-lg)}
+/* halaman form */
+.ina-breadcrumb{margin:32px 0 16px}
+.ptitle{font-size:28px;line-height:36px;font-weight:600}
+.plead{color:var(--ina-content-secondary);margin:8px 0 24px}
+.formcard{padding:32px;gap:24px;align-items:stretch}
+.group{border:0;margin:0;padding:0;display:grid;gap:16px;min-width:0}
+.group legend{font-size:18px;line-height:26px;font-weight:600;padding:0;margin-bottom:16px}
+.ina-text-field,.ina-text-area{width:100%}
+.row-between{display:flex;justify-content:space-between;gap:16px}
+.formactions{display:flex;justify-content:flex-end;gap:12px;padding-top:8px;border-top:1px solid var(--ina-stroke-primary);padding-top:24px}
+.formactions .ina-button{text-decoration:none}
+#form-error{margin-bottom:16px}
+/* berhasil */
+.done{padding:48px 32px;align-items:center;text-align:center;margin-top:48px;gap:8px}
+.done__ic{display:grid;place-items:center;width:64px;height:64px;border-radius:var(--ina-radius-full);background:var(--ina-positive-100,#edfded);color:var(--ina-positive-600,#288034);margin-bottom:16px}.done__ic .ic{width:32px;height:32px}
+.ticket{font-size:28px;line-height:36px;font-weight:700;letter-spacing:.02em;font-variant-numeric:tabular-nums;margin:16px 0 8px;color:var(--ina-content-primary)}.ticket.sm{font-size:20px;line-height:28px;margin:0}
+/* cek status */
+.cek{display:flex;gap:12px;align-items:flex-start;max-width:640px}
+.cek .ina-text-field{flex:1}.cek>.ina-button{margin-top:28px}
+#hasil{margin-top:32px}
+.detail{padding:24px;align-items:stretch;gap:24px}
+.detail__head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.stepwrap{padding:8px 0 24px;overflow-x:auto}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0}
+.kv dt{font-size:14px;line-height:20px;color:var(--ina-content-secondary)}.kv dd{margin:4px 0 0}.kv .full{grid-column:1/-1}
+.ina-table__cell{white-space:normal}
+/* footer */
+.foot{background:var(--ina-background-primary);border-top:1px solid var(--ina-stroke-primary);padding:32px 0;font-size:14px;line-height:20px}
+.foot__in{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;align-items:start}
+.foot p{display:flex;gap:8px;align-items:center;margin-top:4px;color:var(--ina-content-secondary)}
+/* responsif */
+@media (max-width:1024px){.hero__in{grid-template-columns:1fr;gap:32px;padding:48px 24px}.steps{grid-template-columns:1fr}.foot__in{grid-template-columns:1fr}}
+@media (max-width:640px){.wrap{padding:0 16px}.hero__in{padding:32px 16px}.hero h1{font-size:28px;line-height:36px}.hero p{font-size:16px;line-height:24px}
+ .topbar__in{flex-wrap:wrap;padding:8px 0;min-height:0}.nav{width:100%;overflow-x:auto}
+ .formcard{padding:24px 16px}.kv{grid-template-columns:1fr}.cek{flex-direction:column;align-items:stretch}.cek>.ina-button{margin-top:0}
+ .formactions{flex-direction:column-reverse}.formactions .ina-button,.actions .ina-button{width:100%}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+button,input,textarea,select{font-family:inherit}
+.faq .ina-accordion__toggle{width:100%;padding:16px;text-align:left;color:var(--ina-content-primary);font-size:16px;line-height:24px}
+.faq .ina-accordion__body{padding:0 16px 16px;color:var(--ina-content-secondary)}
+fieldset.ina-radio-input{border:0;margin:0;padding:0;min-width:0}
+.ina-text-field__helper-text--error,#setuju-msg{color:var(--ina-negative-500,#f02d2d)!important}
+#setuju-msg{font-size:12px;line-height:16px;margin-top:-16px}
+.ticket{letter-spacing:0}
+.plead a{font-weight:500}
+#hasil .ina-table{overflow-x:auto;max-width:100%;background:var(--ina-background-primary);border:1px solid var(--ina-stroke-primary);border-radius:var(--ina-radius-lg)}
+#hasil .ina-table__container{min-width:640px;width:100%}
+.ticket{white-space:nowrap}
+@media (max-width:640px){.ticket{font-size:22px;line-height:28px}.ticket.sm{font-size:18px;line-height:26px}}
